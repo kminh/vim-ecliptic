@@ -77,18 +77,18 @@ if !exists("g:ecliptic_prefix")
   let g:ecliptic_prefix = 'c'
 endif
 
-vnoremap <silent> <Plug>EclipticVY_v    :call <SID>EclipticCopy(visualmode())<cr>
-vnoremap <silent> <Plug>EclipticVYLine  :call <SID>EclipticCopy('V')<cr>
-nnoremap <silent> <Plug>EclipticYY      :call <SID>EclipticCopy('linewise')<cr>
+vnoremap <silent> <Plug>EclipticVY_v  :call <SID>EclipticCopy(visualmode())<cr>
+vnoremap <silent> <Plug>EclipticVY_V  :call <SID>EclipticCopy('V')<cr>
+nnoremap <silent> <Plug>EclipticYY    :call <SID>EclipticCopy('linewise')<cr>
 execute 'nmap '.g:ecliptic_prefix.'yy <Plug>EclipticYY'
 execute 'nmap '.g:ecliptic_prefix.'y :set operatorfunc=<SID>EclipticCopy<cr>g@'
 execute 'nmap '.g:ecliptic_prefix.'Y  <Plug>EclipticYY'
 execute 'vmap '.g:ecliptic_prefix.'y <Plug>EclipticVY_v'
 execute 'vmap '.g:ecliptic_prefix.'Y <Plug>EclipticVYLine'
 
-vnoremap <silent> <Plug>EclipticVD_v    <ESC>:call <SID>EclipticDelete(visualmode())<cr>
-vnoremap <silent> <Plug>EclipticVDLine  :call <SID>EclipticDelete('V')<cr>
-nnoremap <silent> <Plug>EclipticDD      :call <SID>EclipticDelete('linewise')<cr>
+vnoremap <silent> <Plug>EclipticVD_v  <ESC>:call <SID>EclipticDelete(visualmode())<cr>
+vnoremap <silent> <Plug>EclipticVD_V  :call <SID>EclipticDelete('V')<cr>
+nnoremap <silent> <Plug>EclipticDD    :call <SID>EclipticDelete('linewise')<cr>
 execute 'nmap '.g:ecliptic_prefix.'d :set operatorfunc=<SID>EclipticDelete<cr>g@'
 execute 'nmap '.g:ecliptic_prefix.'dd <Plug>EclipticDD'
 execute 'nmap '.g:ecliptic_prefix.'D  <Plug>EclipticDD'
