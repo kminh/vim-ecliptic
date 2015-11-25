@@ -27,14 +27,14 @@ function! s:EclipticPaste(type, GNoG)
   endif
 endfunction
 
-function! s:EclipticDelete(type)
+function! s:EclipticDelete(type) range
   echo "here"
   if a:type ==# 'v'
     normal! `<v`>"+d
   elseif a:type ==# 'char'
     normal! `[v`]"+d
   elseif a:type ==# 'linewise'
-    normal! "+dd
+    exec 'normal! ' . v:count1 . '"+dd'
   elseif a:type ==# 'V'
     normal! `<V`>"+d
   elseif a:type ==# ''
@@ -44,13 +44,13 @@ function! s:EclipticDelete(type)
   endif
 endfunction
 
-function! s:EclipticCopy(type)
+function! s:EclipticCopy(type) range
   if a:type ==# 'v'
     normal! `<v`>"+y
   elseif a:type ==# 'char'
     normal! `[v`]"+y
   elseif a:type ==# 'linewise'
-    normal! "+yy
+    exec 'normal! ' . v:count1 . '"+yy'
   elseif a:type ==# 'V'
     normal! `<V`>"+y
   elseif a:type ==# ''
